@@ -31,7 +31,7 @@ sys.path.insert(0, os.path.abspath("../.."))
 # -- Project information -----------------------------------------------------
 
 project = "ExecuTorch"
-copyright = "2023, ExecuTorch"
+copyright = "2024, ExecuTorch"
 author = "ExecuTorch Contributors"
 
 
