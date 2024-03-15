@@ -84,6 +84,26 @@
 
 {{ super() }}
 <script type="text/javascript">
+// Handle the right navigation in third level pages. Without this
+// in third level, only the last item always selected. This is a hacky
+// way and we should revise it eventually.
+// Get all menu items
+var menuItems = document.querySelectorAll('.pytorch-right-menu a.reference.internal');
+// Add a click event listener to each menu item
+for (var i = 0; i < menuItems.length; i++) {
+  menuItems[i].addEventListener('click', function(event) {
+    // Remove the 'my-highlight' class from all menu items
+    for (var j = 0; j < menuItems.length; j++) {
+      menuItems[j].classList.remove('side-scroll-highlight-local');
+    }
+    // Add the 'my-highlight' class to the clicked item
+    event.target.classList.add('side-scroll-highlight-local');
+  });
+}
+</script>
+
+{{ super() }}
+<script type="text/javascript">
   $(document).ready(function () {
     // Patch links on interactive tutorial pages to point
     // to the correct ExecuTorch URLs.
